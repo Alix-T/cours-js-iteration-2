@@ -5,6 +5,7 @@ const path = require("path");
 
 app.use(express.static(path.join(__dirname + "/public")));
 
+
 app.use('/adminlte/dist', express.static(__dirname + '/node_modules/admin-lte/dist/'));
 app.use('/adminlte/plugins', express.static(__dirname + '/node_modules/admin-lte/plugins/'));
 app.use('/images', express.static(__dirname + '/public/images/'));
