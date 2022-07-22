@@ -21,10 +21,11 @@ function load_components(){
 
 function add_line_to_table(obj){
     const $newLine = $('<tr>')
-    $('<td>').html(obj.serial).appendTo($newLine);
+    $('<td>').html(obj.serial).css("fontWeight", "bold").appendTo($newLine);
     $('<td>').append(obj.image ? $('<img>').attr("src", "/images/" + obj.image).css("width", "100%") : '').appendTo($newLine);
     $('<td>').html(obj.description).appendTo($newLine);
-    $('<td>').html(obj.status).appendTo($newLine);
+    $('<td>').append($('<input>').attr('type', 'checkbox').attr("checked", obj.status)).appendTo($newLine);
+    $('<td>').append($('<button>').addClass('btn btn-primary').html("détail")).appendTo($newLine);
 
     $('#table_body').append($newLine);
 }
